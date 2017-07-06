@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/EventUtil.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		EventUtil.addHandler()
+		
+		
+		
+		
+			EventUtil.addHandler(document, 'mousewheel', function(event) {
+				event = EventUtil.getEvent(event);
+				console.log(event.wheelDelta);
+			})
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

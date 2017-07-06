@@ -1,0 +1,38 @@
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+<title>滚轮取值效果 -http://www.jb51.net/</title> 
+</head> 
+
+<body> 
+<p><label for="wheelDelta">滚动值:</label>(IE/Opera)<input type="text" id="wheelDelta" /></p> 
+<p><label for="detail">滚动值:(Firefox)</label><input type="text" id="detail" /></p> 
+<script type="text/javascript"> 
+/*********************** 
+* 函数：判断滚轮滚动方向 
+* 作者：walkingp 
+* 参数：event 
+* 返回：滚轮方向 1：向上 -1：向下 
+*************************/ 
+var scrollFunc=function(e){ 
+    var direct=0; 
+    e=e || window.event; 
+    if(e.wheelDelta){//IE/Opera/Chrome 
+        direct=e.wheelDelta/120; 
+    }else if(e.detail){//Firefox 
+        direct=e.detail/3; 
+    } 
+    if(direct>0){
+    	console.log('up');
+    }else{
+    	console.log('down');
+    }
+} 
+/*注册事件*/ 
+if(document.addEventListener){ 
+    document.addEventListener('DOMMouseScroll',scrollFunc,false); 
+}//W3C 
+window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome 
+</script> 
+</body> 
+</html> 

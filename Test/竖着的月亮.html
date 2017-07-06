@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+				<canvas id="canvas"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('canvas');
+			canvas.width = 800;
+			canvas.height = 800;
+			context = canvas.getContext('2d');
+			context.arc(400, 400, 300, 0.5 * Math.PI, 1.5 * Math.PI, true);
+			context.moveTo(400, 100);
+			context.arcTo(1200, 400, 400, 700, (400 - 100) * dis(400, 100, 1200, 400) / (1200 - 400))
+			context.shadowBlur = 20;
+			context.shadowColor = 'black';
+			context.fillStyle = 'yellow';
+			context.fill();
+			context.stroke();
+
+			function dis(x1, y1, x2, y2) {
+				return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+			}
+			</script>
+	</body>
+</html>

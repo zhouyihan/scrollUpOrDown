@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas=document.getElementById('canvas');
+			context=canvas.getContext('2d');
+			
+			//arcTo
+			context.beginPath();
+			context.moveTo(150,150);
+			context.arcTo(650,150,650,650,450);
+			context.moveTo(150,150);
+			context.arcTo(650,150,650,650,650);
+			
+			context.lineWidth=2;
+			context.strokeStyle='gray';
+			context.stroke();
+		</script>
+	</body>
+</html>

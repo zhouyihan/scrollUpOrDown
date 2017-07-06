@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">     
+    
+<html>    
+  <head>    
+    <base >    
+        
+    <title></title>    
+      
+    <script>    
+        function bro(){    
+            var is360 = false;    
+            var isIE = false;    
+            var isFirefox = false;  
+            var isCrome = false;  
+            var broName = '';  
+            if(window.navigator.userAgent.indexOf('MSIE')!=-1&&window.navigator.appName.indexOf("Microsoft") != -1){  
+                isIE = true;  
+                broName = 'IE';  
+            }  
+            if(window.navigator.userAgent.indexOf('Firefox')!=-1){  
+                isFirefox = true;  
+                broName = 'Firefox';  
+            }  
+            if(window.navigator.userAgent.indexOf('Chrome')!=-1){  
+                if(window.navigator.webkitPersistentStorage){  
+                    isCrome = true;  
+                    broName = 'Chrome';  
+                }else{  
+                    is360 = true;  
+                    broName = '360';  
+                }  
+            }  
+  
+            document.getElementById('broType').value=broName;  
+  
+        }    
+    </script>    
+  </head>    
+      
+  <!--<body onload="console.log(window.navigator.userAgent);">    -->
+  <body onload="bro()">
+     <input type="text" id="broType" name="broType">  
+  </body>    
+</html>  

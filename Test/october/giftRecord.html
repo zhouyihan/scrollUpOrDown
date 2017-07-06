@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>选择礼物_容联云通讯</title>
+<link href="css/twelve.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+<script src="../../js/layer/layer.min.js"></script>
+<script type="text/javascript" src="js/cgift.js"></script>
+</head>
+<body>
+	<div class="answerbox">
+	    <div id="s_2" >
+		    <div class="bigtit">领取奖品</div>
+			<div class="smltit">（二选一）</div>
+			<div class="boxradio"><input type="radio" name="gift" checked="checked" class="rad" />路由器</div>
+			<div class="boxradio pd6"><input type="radio" name="gift" class="rad" />蓝牙键盘</div>
+		</div>	
+		<div id="s_3"  >
+			<div class="bigtit">领取奖品</div>
+			<div class="smltit">（三选二）</div>
+			<div class="boxradio"><input type="checkbox" name="gift3" checked="checked" class="rad" />路由器</div>
+			<div class="boxradio pd6"><input type="checkbox" name="gift3" class="rad" />蓝牙键盘</div>
+			<div class="boxradio"><input type="checkbox" checked="checked"  name="gift3" class="rad" />加湿器</div>
+		</div>		
+		  <input type="hidden"  id="ctvalid"  name="ctvalid"  value="0" />
+			<div class="popbox_gift">
+				<span class="popbox_gift_name">公司名称<em style="color:red;">*</em></span>
+				<input type="text" class="box_input1"  id="corpname" name="corpname" />
+			</div>
+			<div class="popbox_gift">
+				<span class="popbox_gift_name">联系人<em style="color:red;">*</em></span>
+				<input type="text" class="box_input1" id="username" name="username" />
+			</div>
+			<div class="popbox_gift">
+				<span class="popbox_gift_name">联系电话<em style="color:red;">*</em></span>
+				<input type="text" class="box_input1" id="mobile" name="mobile" />
+			</div>
+			<div class="popbox_gift">
+				<span class="popbox_gift_name">邮箱<em style="color:red;">*</em></span>
+				<input type="text" class="box_input1" id="email" name="email" />
+			</div>
+			<div class="popbox_gift">
+				<span class="popbox_gift_name">地址<em style="color:red;">*</em></span>
+				<input type="text" class="box_input1"  id="address" name="address" />
+			</div>
+			<div class="btnbox">
+				<a href="javascript:void(0)" class="btn login"  onclick="sub();"><i>提交</i></a>
+			</div>
+			<div class="popbox_gift" style="color:red;">
+				<span id="valerr" class="red"></span>
+			</div>
+	</div>
+</body>
+</html>

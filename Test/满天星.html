@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<canvas id="canvas" style="border:1px solid #aaa;display:block;margin:50px auto;">
+			当前浏览器不知canvas，请更换其他浏览器
+		</canvas>
+		<script type="text/javascript">
+			window.onload = function() {
+				var canvas = document.getElementById('canvas');
+				canvas.width = 800;
+				canvas.height = 800;
+
+				var context = canvas.getContext('2d'); //使用context绘制
+				
+				//context.fillStyle='black';
+				context.fillRect(0,0,canvas.width,canvas.height);
+				
+				//context.lineWidth = 10;
+				for(var i=0;i<200;i++){
+					var r=Math.random()*10+10;
+					var x=Math.random()*canvas.width;
+					var y=Math.random()*canvas.height;
+					var a=Math.random()*360;
+					drawStar(context, x, y, r, r/2.0, 20);
+				}
+				
+			}
+
+			function drawStar(cxt, x, y, outerR, innerR, rot) {
+				cxt.save();
+				
+				cxt.translate(x,y);
+				cxt.rotate(rot/180*Math.PI);
+				
+				starPath(cxt);
+				cxt.restore();
+				
+				cxt.fillStyle='#fb3';
+				cxt.strokeStyle='#fd5';
+				cxt.lineWidth=3;
+				cxt.lineJoin='round';
+				cxt.fill();
+				cxt.stroke();
+			}
+			function starPath(cxt){
+				cxt.beginPath();
+				for(var i = 0; i < 5; i++) {
+					cxt.lineTo(Math.cos((18 + i * 72 - rot) / 180 * Math.PI) * outerR + x,
+					-Math.sin((18 + i * 72 - rot) / 180 * Math.PI) * outerR + x);
+				    cxt.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*innerR+x,-Math.sin((54+i*72-rot)/180*Math.PI)*innerR+x);
+				}
+				cxt.closePath();
+			}
+		</script>
+	</body>
+
+</html>

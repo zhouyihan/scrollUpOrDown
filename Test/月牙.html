@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<canvas id="canvas"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('canvas');
+			canvas.width = 800;
+			canvas.height = 800;
+			context = canvas.getContext('2d');
+			context.arc(400, 400, 300, 0.5 * Math.PI, 1.5 * Math.PI, true);
+			context.moveTo(400, 100);
+			context.arcTo(1200, 400, 400, 700, (400 - 100) * dis(400, 100, 1200, 400) / (1200 - 400))
+			context.shadowBlur = 20;
+			context.shadowColor = 'black';
+			context.fillStyle = 'yellow';
+			context.fill();
+			context.stroke();
+
+			function dis(x1, y1, x2, y2) {
+				return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+			}
+			function fillMoon(cxt,d,x,y,R,rot,fillColor){
+				//d是横坐标的值 
+				cxt.save();
+				cxt.translate(x,y);
+				cxt.rotate(rot*Math.PI/180);
+				cxt.scale(R,R);
+				pathMoon(cxt,d);
+				cxt.fillStyle=fillColor||'#fb5';
+				context.fill();
+				cxt.arcto(d,0,0,1,dis(0,-1,d,0)/d);
+				cxt.closePath();
+			}
+			
+		</script>
+	</body>
+
+</html>

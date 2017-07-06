@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>三目运算符配合方括号使用</title>
+	<!--	<script type="text/javascript">
+			var love={"firstName":"Elodie",lastName:"Porteneuve"}
+			var userFirstName=true;
+			alert(love[userFirstName?"firstName":"lastName"]);
+		</script>-->
+		<script type="text/javascript">
+			function repeat(times){
+				while(--times>=0){
+					for(var index=1,len=arguments.length;index<len;++index){
+						alert(arguments[index]);
+					}
+				}
+			}
+			repeat(2,"IE6 must die!","so IE7...");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
